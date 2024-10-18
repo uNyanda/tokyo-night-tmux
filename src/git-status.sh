@@ -42,7 +42,7 @@ if [[ $CHANGED_COUNT -gt 0 ]]; then
 fi
 
 if [[ $INSERTIONS_COUNT -gt 0 ]]; then
-  STATUS_INSERTIONS="${RESET}#[fg=${THEME[green]},bg=${THEME[base]},bold] ${INSERTIONS_COUNT} "
+  STATUS_INSERTIONS="${RESET}#[fg=${THEME[peach]},bg=${THEME[base]},bold] ${INSERTIONS_COUNT} "
 fi
 
 if [[ $DELETIONS_COUNT -gt 0 ]]; then
@@ -50,7 +50,7 @@ if [[ $DELETIONS_COUNT -gt 0 ]]; then
 fi
 
 if [[ $UNTRACKED_COUNT -gt 0 ]]; then
-  STATUS_UNTRACKED="${RESET}#[fg=${THEME[crust]},bg=${THEME[base]},bold] ${UNTRACKED_COUNT} "
+  STATUS_UNTRACKED="${RESET}#[fg=${THEME[flamingo]},bg=${THEME[base]},bold] ${UNTRACKED_COUNT} "
 fi
 
 # Determine repository sync status
@@ -87,7 +87,7 @@ case "$SYNC_MODE" in
   REMOTE_STATUS="$RESET#[bg=${THEME[base]},fg=${THEME[maroon]},bold]▒ 󰛀"
   ;;
 *)
-  REMOTE_STATUS="$RESET#[bg=${THEME[base]},fg=${THEME[green]},bold]▒ "
+  REMOTE_STATUS="$RESET#[bg=${THEME[base]},fg=${THEME[rosewater]},bold]▒ "
   ;;
 esac
 

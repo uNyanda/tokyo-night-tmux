@@ -55,7 +55,7 @@ tmux set -g status-left "#[fg=${THEME[surface0]},bg=${THEME[sapphire]},bold] #{?
 
 #+--- Windows ---+
 # Focus
-tmux set -g window-status-current-format "$RESET#[fg=${THEME[green]},bg=${THEME[surface1]},dim] #{?#{==:#{pane_current_command},ssh},󰣀 , }#[fg=${THEME[overlay]},bold,nodim]$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#{?window_last_flag, ,󰛐 }"
+tmux set -g window-status-current-format "$RESET#[fg=${THEME[green]},bg=${THEME[surface1]},dim] #{?#{==:#{pane_current_command},ssh},󰣀 , }#[fg=${THEME[overlay]},bold,nodim]$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[rosewater]}]#{?window_last_flag, ,󰛐 }"
 
 # Unfocused (transparent)
 tmux set -g window-status-format "#[fg=${THEME[overlay0]}] #{?#{==:#{pane_current_command},ssh},󰣀 , }$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[yellow]}]#{?window_last_flag,󰁯  , }"

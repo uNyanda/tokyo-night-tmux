@@ -3,83 +3,189 @@
 SELECTED_THEME="$(tmux show-option -gv @tokyo-night-tmux_theme)"
 
 case $SELECTED_THEME in
-"storm")
+"mocha")  # Dark theme
   declare -A THEME=(
-    ["background"]="#24283b"
-    ["foreground"]="#a9b1d6"
-    ["black"]="#414868"
-    ["blue"]="#7aa2f7"
-    ["cyan"]="#7dcfff"
-    ["green"]="#73daca"
-    ["magenta"]="#bb9af7"
-    ["red"]="#f7768e"
-    ["white"]="#a9b1d6"
-    ["yellow"]="#e0af68"
+    # Base colors
+    ["base"]="#1e1e2e"
+    ["text"]="#cdd6f4"
 
-    ["bblack"]="#414868"
-    ["bblue"]="#7aa2f7"
-    ["bcyan"]="#7dcfff"
-    ["bgreen"]="#41a6b5"
-    ["bmagenta"]="#bb9af7"
-    ["bred"]="#f7768e"
-    ["bwhite"]="#787c99"
-    ["byellow"]="#e0af68"
+    # Regular colors
+    ["rosewater"]="#f5e0dc"
+    ["flamingo"]="#f2cdcd"
+    ["pink"]="#f5c2e7"
+    ["mauve"]="#cba6f7"
+    ["red"]="#f38ba8"
+    ["maroon"]="#eba0ac"
+    ["peach"]="#fab387"
+    ["yellow"]="#f9e2af"
+    ["green"]="#a6e3a1"
+    ["teal"]="#94e2d5"
+    ["sky"]="#89dceb"
+    ["sapphire"]="#74c7ec"
+    ["blue"]="#89b4fa"
+    ["lavender"]="#b4befe"
+
+    # Surface colors
+    ["crust"]="#11111b"
+    ["mantle"]="#181825"
+    ["surface0"]="#313244"
+    ["surface1"]="#45475a"
+    ["surface2"]="#585b70"
+    ["overlay0"]="#6c7086"
+    ["overlay1"]="#7f849c"
+    ["overlay2"]="#9399b2"
+    ["subtext0"]="#a6adc8"
+    ["subtext1"]="#bac2de"
   )
   ;;
-
-"day")
+"macchiato")  # Medium theme
   declare -A THEME=(
-    ["background"]="#d5d6db"
-    ["foreground"]="#343b58"
-    ["black"]="#0f0f14"
-    ["blue"]="#34548a"
-    ["cyan"]="#0f4b6e"
-    ["green"]="#33635c"
-    ["magenta"]="#5a4a78"
-    ["red"]="#8c4351"
-    ["white"]="#343b58"
-    ["yellow"]="#8f5e15"
+    # Base colors
+    ["base"]="#24273a"
+    ["text"]="#cad3f5"
 
-    ["bblack"]="#9699a3"
-    ["bblue"]="#34548a"
-    ["bcyan"]="#0f4b6e"
-    ["bgreen"]="#33635c"
-    ["bmagenta"]="#5a4a78"
-    ["bred"]="#8c4351"
-    ["bwhite"]="#343b58"
-    ["byellow"]="#8f5815"
+    # Regular colors
+    ["rosewater"]="#f4dbd6"
+    ["flamingo"]="#f0c6c6"
+    ["pink"]="#f5bde6"
+    ["mauve"]="#c6a0f6"
+    ["red"]="#ed8796"
+    ["maroon"]="#ee99a0"
+    ["peach"]="#f5a97f"
+    ["yellow"]="#eed49f"
+    ["green"]="#a6da95"
+    ["teal"]="#8bd5ca"
+    ["sky"]="#91d7e3"
+    ["sapphire"]="#7dc4e4"
+    ["blue"]="#8aadf4"
+    ["lavender"]="#b7bdf8"
+
+    # Surface colors
+    ["crust"]="#181926"
+    ["mantle"]="#1e2030"
+    ["surface0"]="#363a4f"
+    ["surface1"]="#494d64"
+    ["surface2"]="#5b6078"
+    ["overlay0"]="#6e738d"
+    ["overlay1"]="#8087a2"
+    ["overlay2"]="#939ab7"
+    ["subtext0"]="#a5adcb"
+    ["subtext1"]="#b8c0e0"
   )
   ;;
+"frappe")  # Medium-dark theme
+  declare -A THEME=(
+    # Base colors
+    ["base"]="#303446"
+    ["text"]="#c6d0f5"
 
+    # Regular colors
+    ["rosewater"]="#f2d5cf"
+    ["flamingo"]="#eebebe"
+    ["pink"]="#f4b8e4"
+    ["mauve"]="#ca9ee6"
+    ["red"]="#e78284"
+    ["maroon"]="#ea999c"
+    ["peach"]="#ef9f76"
+    ["yellow"]="#e5c890"
+    ["green"]="#a6d189"
+    ["teal"]="#81c8be"
+    ["sky"]="#99d1db"
+    ["sapphire"]="#85c1dc"
+    ["blue"]="#8caaee"
+    ["lavender"]="#babbf1"
+
+    # Surface colors
+    ["crust"]="#232634"
+    ["mantle"]="#292c3c"
+    ["surface0"]="#414559"
+    ["surface1"]="#51576d"
+    ["surface2"]="#626880"
+    ["overlay0"]="#737994"
+    ["overlay1"]="#838ba7"
+    ["overlay2"]="#949cbb"
+    ["subtext0"]="#a5adce"
+    ["subtext1"]="#b5bfe2"
+  )
+  ;;
+"latte")  # Light theme
+  declare -A THEME=(
+    # Base colors
+    ["base"]="#eff1f5"
+    ["text"]="#4c4f69"
+
+    # Regular colors
+    ["rosewater"]="#dc8a78"
+    ["flamingo"]="#dd7878"
+    ["pink"]="#ea76cb"
+    ["mauve"]="#8839ef"
+    ["red"]="#d20f39"
+    ["maroon"]="#e64553"
+    ["peach"]="#fe640b"
+    ["yellow"]="#df8e1d"
+    ["green"]="#40a02b"
+    ["teal"]="#179299"
+    ["sky"]="#04a5e5"
+    ["sapphire"]="#209fb5"
+    ["blue"]="#1e66f5"
+    ["lavender"]="#7287fd"
+
+    # Surface colors
+    ["crust"]="#dce0e8"
+    ["mantle"]="#e6e9ef"
+    ["surface0"]="#ccd0da"
+    ["surface1"]="#bcc0cc"
+    ["surface2"]="#acb0be"
+    ["overlay0"]="#9ca0b0"
+    ["overlay1"]="#8c8fa1"
+    ["overlay2"]="#7c7f93"
+    ["subtext0"]="#6c6f85"
+    ["subtext1"]="#5c5f77"
+  )
+  ;;
 *)
-  # Default to night theme
+  # Default to mocha if no theme is selected
   declare -A THEME=(
-    ["background"]="#1A1B26"
-    ["foreground"]="#a9b1d6"
-    ["black"]="#414868"
-    ["blue"]="#7aa2f7"
-    ["cyan"]="#7dcfff"
-    ["green"]="#73daca"
-    ["magenta"]="#bb9af7"
-    ["red"]="#f7768e"
-    ["white"]="#c0caf5"
-    ["yellow"]="#e0af68"
+    # Base colors
+    ["base"]="#1e1e2e"
+    ["text"]="#cdd6f4"
 
-    ["bblack"]="#2A2F41"
-    ["bblue"]="#7aa2f7"
-    ["bcyan"]="#7dcfff"
-    ["bgreen"]="#41a6b5"
-    ["bmagenta"]="#bb9af7"
-    ["bred"]="#ff9e64"
-    ["bwhite"]="#787c99"
-    ["byellow"]="#e0af68"
+    # Regular colors
+    ["rosewater"]="#f5e0dc"
+    ["flamingo"]="#f2cdcd"
+    ["pink"]="#f5c2e7"
+    ["mauve"]="#cba6f7"
+    ["red"]="#f38ba8"
+    ["maroon"]="#eba0ac"
+    ["peach"]="#fab387"
+    ["yellow"]="#f9e2af"
+    ["green"]="#a6e3a1"
+    ["teal"]="#94e2d5"
+    ["sky"]="#89dceb"
+    ["sapphire"]="#74c7ec"
+    ["blue"]="#89b4fa"
+    ["lavender"]="#b4befe"
+
+    # Surface colors
+    ["crust"]="#11111b"
+    ["mantle"]="#181825"
+    ["surface0"]="#313244"
+    ["surface1"]="#45475a"
+    ["surface2"]="#585b70"
+    ["overlay0"]="#6c7086"
+    ["overlay1"]="#7f849c"
+    ["overlay2"]="#9399b2"
+    ["subtext0"]="#a6adc8"
+    ["subtext1"]="#bac2de"
   )
   ;;
 esac
 
-THEME['ghgreen']="#3fb950"
-THEME['ghmagenta']="#A371F7"
-THEME['ghred']="#d73a4a"
-THEME['ghyellow']="#d29922"
+# Git status colors (using Catppuccin colors)
+THEME['git_green']=${THEME[green]}
+THEME['git_mauve']=${THEME[mauve]}
+THEME['git_red']=${THEME[red]}
+THEME['git_peach']=${THEME[peach]}
 
-RESET="#[fg=${THEME[foreground]},bg=${THEME[background]},nobold,noitalics,nounderscore,nodim]"
+# Reset string with new color names
+RESET="#[fg=${THEME[text]},bg=${THEME[base]},nobold,noitalics,nounderscore,nodim]"

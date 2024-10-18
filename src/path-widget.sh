@@ -7,7 +7,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/.."
 # get value from tmux config
 SHOW_PATH=$(tmux show-option -gv @tokyo-night-tmux_show_path 2>/dev/null)
 PATH_FORMAT=$(tmux show-option -gv @tokyo-night-tmux_path_format 2>/dev/null) # full | relative
-RESET="#[fg=brightwhite,bg=#15161e,nobold,noitalics,nounderscore,nodim]"
+RESET="#[fg=grey,bg=#15161e,nobold,noitalics,nounderscore,nodim]"
 
 # check if not enabled
 if [ "${SHOW_PATH}" != "1" ]; then

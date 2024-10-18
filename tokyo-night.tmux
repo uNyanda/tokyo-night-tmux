@@ -51,11 +51,11 @@ battery_status="#($SCRIPTS_PATH/battery-widget.sh)"
 
 #+--- Bars LEFT ---+
 # Session name
-tmux set -g status-left "#[fg=${THEME[surface0]},bg=${THEME[sky]},bold] #{?client_prefix,󰘻 ,#[dim]󰤂 }#[bold,nodim]rei "
+tmux set -g status-left "#[fg=${THEME[surface0]},bg=${THEME[sapphire]},bold] #{?client_prefix,󰘻 ,#[dim]󰤂 }#[bold,nodim]rei "
 
 #+--- Windows ---+
 # Focus
-tmux set -g window-status-current-format "$RESET#[fg=${THEME[overlay2]},bg=${THEME[overlay0]}] #{?#{==:#{pane_current_command},ssh},󰣀 , }#[fg=${THEME[overlay]},bold,nodim]$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#{?window_last_flag, , }"
+tmux set -g window-status-current-format "$RESET#[fg=${THEME[green]},bg=${THEME[surface2]}] #{?#{==:#{pane_current_command},ssh},󰣀 , }#[fg=${THEME[overlay]},bold,nodim]$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#{?window_last_flag, , }"
 
 # Unfocused (transparent)
 tmux set -g window-status-format "#[fg=${THEME[overlay0]}] #{?#{==:#{pane_current_command},ssh},󰣀 , }$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[yellow]}]#{?window_last_flag,󰁯  , }"

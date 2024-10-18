@@ -18,8 +18,9 @@ RESET="#[fg=${THEME[text]},bg=${THEME[base]},nobold,noitalics,nounderscore,nodim
 
 # Highlight colors
 tmux set -g mode-style "fg=${THEME[green]},bg=${THEME[surface0]}"            # modified (with
-tmux set -g message-style "fg=${THEME[green]},bg=default,align=centre"                    # transparent background
+tmux set -g message-style "fg=${THEME[green]},bg=default"                    # transparent background
 tmux set -g message-command-style "fg=${THEME[green]},bg=default"            # and green text).
+tmux set -g display-position "centre"
 tmux set -g pane-border-style "fg=${THEME[surface0]}"
 tmux set -g pane-active-border-style "fg=${THEME[blue]}"
 tmux set -g pane-border-status off

@@ -26,7 +26,7 @@ tmux set -g pane-border-style "fg=${THEME[bblack]}"
 tmux set -g pane-active-border-style "fg=${THEME[blue]}"
 tmux set -g pane-border-status off
 
-tmux set -g status-style bg="default"
+tmux set -g status-style bg="${THEME[background]}"
 
 TMUX_VARS="$(tmux show -g)"
 
@@ -54,13 +54,13 @@ battery_status="#($SCRIPTS_PATH/battery-widget.sh)"
 
 #+--- Bars LEFT ---+
 # Session name
-tmux set -g status-left "#[fg=#dc8a78,bg=#1e66f5,bold] #{?client_prefix,󰠠 ,#[dim]󰤂 }#[bold,nodim]#S "
+tmux set -g status-left "#[fg=${THEME[bblack]},bg=${THEME[blue]},bold] #{?client_prefix, ,#[dim]󰤂 }#[bold,nodim]#S "
 
 #+--- Windows ---+
 # Focus
-tmux set -g window-status-current-format "$RESET#[fg=#a6d189,bg=#40a02b] #{?#{==:#{pane_current_command},ssh},󰣀 , }#[fg=${THEME[foreground]},bold,nodim]$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#{?window_last_flag, , }"
+tmux set -g window-status-current-format "$RESET#[fg=${THEME[green]},bg=${THEME[bblack]}] #{?#{==:#{pane_current_command},ssh},󰣀 , }#[fg=${THEME[foreground]},bold,nodim]$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#{?window_last_flag, , }"
 # Unfocused
-tmux set -g window-status-format "$RESET#[fg=default,bg=default] #{?#{==:#{pane_current_command},ssh},󰣀 , }${RESET}$window_number#W#[nobold,dim]#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[yellow]}]#{?window_last_flag,󰁯  , }"
+tmux set -g window-status-format "$RESET#[fg=${THEME[foreground]}] #{?#{==:#{pane_current_command},ssh},󰣀 , }${RESET}$window_number#W#[nobold,dim]#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[yellow]}]#{?window_last_flag,󰁯  , }"
 
 #+--- Bars RIGHT ---+
 tmux set -g status-right "$battery_status$current_path$cmus_status$netspeed$git_status$wb_git_status$date_and_time"

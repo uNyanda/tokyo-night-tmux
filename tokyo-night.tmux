@@ -60,7 +60,7 @@ tmux set -g status-left "#[fg=#dc8a78,bg=#1e66f5,bold] #{?client_prefix,󰠠 ,#[
 # Focus
 tmux set -g window-status-current-format "$RESET#[fg=#a6d189,bg=#40a02b] #{?#{==:#{pane_current_command},ssh},󰣀 , }#[fg=${THEME[foreground]},bold,nodim]$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#{?window_last_flag, , }"
 # Unfocused
-tmux set -g window-status-format "$RESET#[fg=#9ca0b0,bg=default] #{?#{==:#{pane_current_command},ssh},󰣀 , }${RESET}$window_number#W#[nobold,dim]#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[yellow]}]#{?window_last_flag,󰁯  , }"
+tmux set -g window-status-format "$RESET#[fg=default,bg=default] #{?#{==:#{pane_current_command},ssh},󰣀 , }${RESET}$window_number#W#[nobold,dim]#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[yellow]}]#{?window_last_flag,󰁯  , }"
 
 #+--- Bars RIGHT ---+
 tmux set -g status-right "$battery_status$current_path$cmus_status$netspeed$git_status$wb_git_status$date_and_time"

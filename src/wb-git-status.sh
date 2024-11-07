@@ -32,7 +32,7 @@ if [[ $PROVIDER == "github.com" ]]; then
   if ! command -v gh &>/dev/null; then
     exit 1
   fi
-  PROVIDER_ICON="$RESET#[fg=${THEME[overlay1]}] "
+  PROVIDER_ICON="$RESET#[fg=${THEME[overlay0]}] "
   PR_COUNT=$(gh pr list --json number --jq 'length' | bc)
   REVIEW_COUNT=$(gh pr status --json reviewRequests --jq '.needsReview | length' | bc)
   RES=$(gh issue list --json "assignees,labels" --assignee @me)

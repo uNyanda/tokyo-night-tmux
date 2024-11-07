@@ -52,22 +52,22 @@ else
 fi
 
 if [[ $PR_COUNT -gt 0 ]]; then
-  PR_STATUS="#[fg=${THEME[green]},bg=${THEME[base]},bold] ${RESET}${PR_COUNT} "
+  PR_STATUS="#[fg=${THEME[git_green]},bold] ${RESET}${PR_COUNT} "
 fi
 
 if [[ $REVIEW_COUNT -gt 0 ]]; then
-  REVIEW_STATUS="#[fg=${THEME[yellow]},bg=${THEME[base]},bold] ${RESET}${REVIEW_COUNT} "
+  REVIEW_STATUS="#[fg=${THEME[git_yellow]},bold] ${RESET}${REVIEW_COUNT} "
 fi
 
 if [[ $ISSUE_COUNT -gt 0 ]]; then
-  ISSUE_STATUS="#[fg=${THEME[green]},bg=${THEME[base]},bold] ${RESET}${ISSUE_COUNT} "
+  ISSUE_STATUS="#[fg=${THEME[git_green]},bold] ${RESET}${ISSUE_COUNT} "
 fi
 
 if [[ $BUG_COUNT -gt 0 ]]; then
-  BUG_STATUS="#[fg=${THEME[red]},bg=${THEME[base]},bold] ${RESET}${BUG_COUNT} "
+  BUG_STATUS="#[fg=${THEME[git_red]},bold] ${RESET}${BUG_COUNT} "
 fi
 
-WB_STATUS="#[fg=${THEME[black]},bg=${THEME[base]},bold] $RESET$PROVIDER_ICON $RESET$PR_STATUS$REVIEW_STATUS$ISSUE_STATUS$BUG_STATUS"
+WB_STATUS="#[fg=${THEME[black]},bold] $RESET$PROVIDER_ICON $RESET$PR_STATUS$REVIEW_STATUS$ISSUE_STATUS$BUG_STATUS"
 
 echo "$WB_STATUS"
 

@@ -58,7 +58,7 @@ tmux set -g status-left "#[fg=${THEME[surface2]},bg=${THEME[sapphire]},bold] #{?
 tmux set -g window-status-current-format "$RESET#[fg=${THEME[blue]},bg="default",dim] #{?#{==:#{pane_current_command},ssh},#[fg=${THEME[green]}]󰣀 , }#[fg=${THEME[blue]},bold,nodim]$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[green]},bold]#{?window_last_flag, , }"
 
 # Unfocused (transparent)
-tmux set -g window-status-format "#[fg=${THEME[overlay0]}] #{?#{==:#{pane_current_command},ssh},󰣀 , }$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[yellow]}]#{?window_last_flag,󰋚 , }"
+tmux set -g window-status-format "#[fg=${THEME[text]}] #{?#{==:#{pane_current_command},ssh},󰣀 , }$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[yellow]}]#{?window_last_flag,󰋚 , }"
 
 #+--- Bars RIGHT ---+
 tmux set -g status-right "$battery_status$current_path$cmus_status$netspeed$git_status$wb_git_status$date_and_time"

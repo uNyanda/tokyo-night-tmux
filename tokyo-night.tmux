@@ -17,9 +17,9 @@ tmux set -g status-right-length 150
 RESET="#[fg=${THEME[text]},bg=${THEME[base]},nobold,noitalics,nounderscore,nodim]"
 
 # Highlight colors
-tmux set -g mode-style "fg=${THEME[lavender]},bg=${THEME[surface0]}"            # modified (with
+tmux set -g mode-style "fg=${THEME[lavender]},bg=${THEME[surface0]}"      # modified (with
 tmux set -g message-style "fg=${THEME[red]},bg=default"                   # transparent background
-tmux set -g message-command-style "fg=${THEME[green]},bg=default"               # and green text).
+tmux set -g message-command-style "fg=${THEME[green]},bg=default"         # and green text).
 tmux set -g pane-border-style "fg=${THEME[surface0]}"
 tmux set -g pane-active-border-style "fg=${THEME[blue]}"
 tmux set -g pane-border-status off
@@ -51,7 +51,7 @@ battery_status="#($SCRIPTS_PATH/battery-widget.sh)"
 
 #+--- Bars LEFT ---+
 # Session name
-tmux set -g status-left "#[fg=${THEME[surface2]},bg=${THEME[sapphire]},bold] #{?client_prefix,󱠇 ,#[dim]󰤂 }#[bold,nodim]󰫮󰬆󰫮 "
+tmux set -g status-left "#[fg=${THEME[surface0]},bg=${THEME[sapphire]}]#[fg=${THEME[surface2]},bg=${THEME[sapphire]},bold] #{?client_prefix,󱠇 ,#[dim]󰤂 }#[bold,nodim]󰫮󰬆󰫮 #[fg=${THEME[sapphire]},bg=default,nobold]"
 
 #+--- Windows ---+
 # Focus

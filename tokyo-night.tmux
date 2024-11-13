@@ -51,7 +51,7 @@ battery_status="#($SCRIPTS_PATH/battery-widget.sh)"
 
 #+--- Bars LEFT ---+
 # Session name
-tmux set -g status-left "#[fg=${THEME[surface0]},bg=${THEME[sapphire]}]#[fg=${THEME[surface2]},bg=${THEME[sapphire]},bold] #{?client_prefix,󱠇 ,#[dim]󰤂 }#[bold,nodim]󰫮󰬆󰫮 #[fg=${THEME[sapphire]},bg=default,nobold]"
+tmux set -g status-left "#[fg=${THEME[sapphire]},bg=${THEME[sapphire]}]#[fg=${THEME[surface2]},bg=${THEME[sapphire]},bold] #{?client_prefix,󱠇 ,#[dim]󰤂 }#[bold,nodim]󰫮󰬆󰫮 #[fg=${THEME[sapphire]},bg=default,nobold]"
 
 #+--- Windows ---+
 # Focus

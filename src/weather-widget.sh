@@ -46,37 +46,47 @@ get_weather_icon() {
     local icon_code=$1
 
     case $icon_code in
-        1) echo "󰖙" ;;               # Sunny
-        2) echo "󰖕" ;;               # Partly Cloudy
-        3) echo "" ;;               # Partly Cloudy
-        4) echo "" ;;               # Partly Cloudy
-        5) echo "󰖐" ;;               # Cloudy
-        6) echo "" ;;               # Showers
-        7) echo "" ;;               # Thunderstorms
-        8) echo "" ;;               # Snowy
-        10) echo "󰖑" ;;              # Fog
-        11) echo "󰖝" ;;              # Windy
-        12) echo "" ;;              # Light Showers
-        13) echo "󰙿" ;;              # Snowy Showers
-        14) echo "" ;;              # Sleet
-        15) echo "" ;;              # Freezing Rain
-        16) echo "󰙿" ;;              # Snowy Showers
-        17) echo "󰖒" ;;              # Hail
-        18) echo "" ;;              # Dust
-        19) echo "" ;;              # Smoke
-        20) echo "󱞙" ;;              # Ash
-        21) echo "󰼯" ;;              # Squalls
-        22) echo "" ;;              # Tornado
-        23) echo "󰢘" ;;              # Hurricane
-        24) echo "" ;;              # Tropical Storm
-        25) echo "󰖝" ;;              # Windy
-        26) echo "" ;;              # Overcast
-        27) echo "󰖔" ;;              # Clear Night
-        28) echo "󰼱" ;;              # Partly Cloudy Night
-        29) echo "" ;;              # Mostly Clear Night
-        30) echo "" ;;              # Mostly Clear Night
-        31) echo "" ;;              # Scattered Clouds
-        *) echo "" ;;               # Unknown
+        1) echo "󰖙" ;;                 # Sunny
+        2) echo "󰖕" ;;                 # Mostly Sunny
+        3) echo "" ;;                 # Partly Sunny
+        4) echo "" ;;                 # Partly Intermittent Clouds
+        5) echo "" ;;                 # Hazy Sunshine
+        6) echo "󰅟" ;;               # Mostly Cloudy
+        7) echo "" ;;                # Cloudy
+        8) echo "" ;;                 # Dreary (Overcast)
+        11) echo "󰖑" ;;                # Fog
+        12) echo "" ;;               # Showers
+        13) echo "" ;;              # Mostly Cloudy w/ Showers
+        14) echo "" ;;                # Partly Sunny w/ Showers
+        15) echo "" ;;                # Thunderstorms
+        16) echo "" ;;                # Mostly Cloudy w/ Thunderstorms
+        17) echo "" ;;               # Partly Sunny w/ Thunderstorms
+        18) echo "" ;;                # Rain
+        19) echo "" ;;               # Flurries
+        20) echo "󰅟" ;;               # Most Cloudy w/ Flurries
+        21) echo "󰖙" ;;               # Partly Sunny w/ Flurries
+        22) echo "" ;;                # Snow
+        23) echo "󰖘" ;;                # Mostly Cloudy w/ Snow
+        24) echo "" ;;                # Ice
+        25) echo "" ;;                # Sleet
+        26) echo "" ;;               # Freezing Rain
+        29) echo "󰙿" ;;                # Rain and Snow
+        30) echo "󱣖" ;;                # Hot
+        31) echo "󱩱" ;;                # Cold
+        32) echo "󰖝" ;;                # Windy
+        33) echo "" ;;                # Clear
+        34) echo "" ;;               # Mostly Clear
+        35) echo ""  ;;               # Partly Cloudy
+        36) echo ""  ;;               # Intermittent Clouds
+        37) echo ""  ;;               # Hazy Moonlight
+        38) echo ""  ;;               # Mostly Cloudy
+        39) echo ""  ;;               # Partly Cloudy w/ Showers
+        40) echo ""  ;;               # Mostly Cloudy w/ Showers
+        41) echo ""  ;;               # Partly Cloudy w/ Thunderstorms
+        42) echo ""  ;;               # Mostly Cloudy w/ Thunderstorms
+        43) echo "󰅟"  ;;              # Mostly Cloudy w/ Flurries
+        44) echo ""  ;;               # Mostly Cloudy w/ Snow
+        *) echo "" ;;                 # Unknown
     esac
 }
 
@@ -94,6 +104,9 @@ fetch_weather_info() {
         echo "󱧣"  # Display when API call fails
         return 1
     fi
+
+    # save the weather data to the cache file
+    echo "$weather_data" > "$CACHE_FILE"
 
     # Extract weather information with debug output
     echo "$weather_data" > "$DEBUG_LOG"

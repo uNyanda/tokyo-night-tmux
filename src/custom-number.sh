@@ -13,7 +13,7 @@ format_dsquare="󰎢󰎥󰎨󰎫󰎲󰎯󰎴󰎷󰎺󰎽"
 format_roman=" 󱂈󱂉󱂊󱂋󱂌󱂍󱂎󱂏󱂐"
 format_super="⁰¹²³⁴⁵⁶⁷⁸⁹"
 format_sub="₀₁₂₃₄₅₆₇₈₉"
-format_circle="󰲡󰲣󰲥󰲧󰲩󰲫󰲭󰲯󰲱"
+format_circle="󰰗󰲡󰲣󰲥󰲧󰲩󰲫󰲭󰲯󰲱"
 
 ID=$1
 FORMAT=${2:-none}

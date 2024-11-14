@@ -4,7 +4,7 @@ CACHE_DIR="$HOME/.cache/weather-widget"
 CACHE_FILE="$CACHE_DIR/weather.txt"
 
 # Fetch the weather in format=1 (emoji + temperature)
-weather=$(curl -s "wttr.in/Hammarsdale?format=1")
+weather=$(curl -s "wttr.in/Hammarsdale?format=%t")
 
 # Ensure the cache directory exists
 mkdir -p "$CACHE_DIR"

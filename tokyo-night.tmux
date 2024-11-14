@@ -12,6 +12,8 @@ source $SCRIPTS_PATH/themes.sh
 tmux set -g status-left-length 80
 tmux set -g status-right-length 150
 
+tmux set -g status-interval 120
+
 # Map the old color variables to new Catppuccin colors
 RESET="#[fg=${THEME[text]},bg=${THEME[base]},nobold,noitalics,nounderscore,nodim]"
 

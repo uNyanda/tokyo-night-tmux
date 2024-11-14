@@ -53,7 +53,7 @@ weather_status="#(curl -s wttr.in/Hammarsdale?format="%%t")"
 # Session name
 tmux set -g status-left "#[fg=${THEME[lavender]},bg=default,nobold]\
 #[fg=${THEME[surface2]},bg=${THEME[lavender]},bold]#{?client_prefix,#[fg=${THEME[red]}]󱚨,#[dim]󰿇} \
-#[fg=${THEME[surface2]},bg=${THEME[lavender]},bold] $weather_status#[bold] \
+#[fg=${THEME[surface2]},bg=${THEME[lavender]},bold] #[bold]$weather_status \
 #[fg=${THEME[lavender]},bg=default,nobold]"
 
 #+--- Windows ---+

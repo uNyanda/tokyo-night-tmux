@@ -14,4 +14,5 @@ status_left_color() {
   fi
 }
 
-CURRENT_STATUS_LEFT_COLOR="${THEME[surface2]}"
+status_left_color
+echo "$CURRENT_STATUS_LEFT_COLOR"

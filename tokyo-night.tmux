@@ -12,7 +12,7 @@ source $SCRIPTS_PATH/themes.sh
 tmux set -g status-left-length 80
 tmux set -g status-right-length 150
 
-tmux set -g status-interval 120
+tmux set -g status-interval 60
 
 # Map the old color variables to new Catppuccin colors
 RESET="#[fg=${THEME[text]},bg=${THEME[base]},nobold,noitalics,nounderscore,nodim]"
@@ -49,11 +49,11 @@ zoom_number="#($SCRIPTS_PATH/custom-number.sh #P $zoom_id_style)"
 date_and_time="#($SCRIPTS_PATH/datetime-widget.sh)"
 current_path="#($SCRIPTS_PATH/path-widget.sh #{pane_current_path})"
 battery_status="#($SCRIPTS_PATH/battery-widget.sh)"
-weather_status="#(curl -s wttr.in/Hammarsdale\?format\="3&period=60")"
+weather_status="#(curl -s wttr.in/Hammarsdale\?format\="%%l:+%%c+%%t&period=60")"
 
 #+--- Bars LEFT ---+
 # Session name
-tmux set -g status-left "#[fg=${THEME[lavender]},bg=default, nobold]#[fg=${THEME[surface2]},bg=${THEME[lavender]},bold] #{?client_prefix, ,#[dim]󰤂 }#[bold,nodim]$weather_status #[fg=${THEME[lavender]},bg=default,nobold]"
+tmux set -g status-left "#[fg=${THEME[lavender]},bg=default, nobold]#[fg=${THEME[surface2]},bg=${THEME[lavender]},bold] #{?client_prefix, ,#[dim]󰤂 }#[bold,nodim]$weather_status#[fg=${THEME[lavender]},bg=default,nobold]"
 
 #+--- Windows ---+
 # Focus

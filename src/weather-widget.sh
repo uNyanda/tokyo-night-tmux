@@ -78,11 +78,16 @@ get_weather_icon() {
 
 # Main function to fetch weather and display info
 fetch_weather_info() {
+    # Clear cache if outdated
+    if [ -f "$CACHE_FILE" ] && [ $(($(date +%s) - $(stat -c %Y "$CACHE_FILE"))) -ge $CACHE_DURATION ]; then
+        rm "$CACHE_FILE"
+    fi
+
     local weather_data
     weather_data=$(get_weather_data)
 
     if [ -z "$weather_data" ]; then
-        echo "❓"  # Display when API call fails
+        echo "󱧣"  # Display when API call fails
         return 1
     fi
 
@@ -94,7 +99,7 @@ fetch_weather_info() {
     icon_code=$(echo "$weather_data" | jq -r '.[0].WeatherIcon // empty')
 
     if [ -z "$icon_code" ]; then
-        echo "❓"  # Display when JSON parsing fails
+        echo "󱔢"  # Display when JSON parsing fails
         return 1
     fi
 

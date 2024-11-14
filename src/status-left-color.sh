@@ -8,11 +8,10 @@ source "$CURRENT_DIR/themes.sh"
 
 status_left_color() {
   if [[ "$(tmux show-option -gpv client_prefix)" == "1" ]]; then
-    CURRENT_STATUS_LEFT_COLOR="${THEME[lavender]}"
+    echo "${THEME[green]}"   # when prefix is pressed
   else
-    CURRENT_STATUS_LEFT_COLOR="${THEME[surface2]}"
+    echo "${THEME[lavender]}"
   fi
 }
 
 status_left_color
-echo "$CURRENT_STATUS_LEFT_COLOR"

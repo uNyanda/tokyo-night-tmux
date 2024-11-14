@@ -10,10 +10,13 @@ format_digital="🯰🯱🯲🯳🯴🯵🯶🯷🯸🯹"
 format_fsquare="󰎡󰎤󰎧󰎪󰎭󰎱󰎳󰎶󰎹󰎼"
 format_hsquare="󰎣󰎦󰎩󰎬󰎮󰎰󰎵󰎸󰎻󰎾"
 format_dsquare="󰎢󰎥󰎨󰎫󰎲󰎯󰎴󰎷󰎺󰎽"
+format_esquare="󰼎󰼏󰼐󰼑󰼒󰼓󰼔󰼕󰼖󰼗"
 format_roman=" 󱂈󱂉󱂊󱂋󱂌󱂍󱂎󱂏󱂐"
 format_super="⁰¹²³⁴⁵⁶⁷⁸⁹"
 format_sub="₀₁₂₃₄₅₆₇₈₉"
-format_circle="󰰗󰲡󰲣󰲥󰲧󰲩󰲫󰲭󰲯󰲱"
+format_hcircle="󰰗󰲡󰲣󰲥󰲧󰲩󰲫󰲭󰲯󰲱"
+format_fcircle="󰰖󰲠󰲢󰲤󰲦󰲨󰲪󰲬󰲮󰲰"
+format_numeric="󰬺󰬻󰬼󰬽󰬾󰬿󰭀󰭁󰭂"
 
 ID=$1
 FORMAT=${2:-none}

@@ -3,8 +3,12 @@
 # Get the directory where the script is located
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ENV_FILE="$SCRIPT_DIR/.env"
-CACHE_FILE="/tmp/weather-cache.json"
+CACHE_FILE="$HOME/.cache/weather-widget/weather-cache.json"
+DEBUG_LOG="$HOME/.cache/weather-widget/weather-debug.log"
 CACHE_DURATION=1800  # 30 minutes in seconds
+
+# Ensure the cache directory exists
+mkdir -p "$HOME/.cache/weather-widget"
 
 # Load environment variables
 if [ -f "$ENV_FILE" ]; then
@@ -18,8 +22,8 @@ URL="http://dataservice.accuweather.com/currentconditions/v1/$LOCATION_CODE?apik
 # Debug function
 debug_response() {
     local response=$1
-    echo "API Response:" > /tmp/weather-debug.log
-    echo "$response" >> /tmp/weather-debug.log
+    echo "API Response:" > "$DEBUG_LOG"
+    echo "$response" >> "$DEBUG_LOG"
 }
 
 # Function to get the weather data
@@ -42,20 +46,20 @@ get_weather_icon() {
     local icon_code=$1
 
     case $icon_code in
-        1) echo "󰖙" ;;                # Sunny
+        1) echo "󰖙" ;;               # Sunny
         2) echo "󰖕" ;;               # Partly Cloudy
         3) echo "" ;;               # Partly Cloudy
         4) echo "" ;;               # Partly Cloudy
-        5) echo "󰖐" ;;                # Cloudy
+        5) echo "󰖐" ;;               # Cloudy
         6) echo "" ;;               # Showers
         7) echo "" ;;               # Thunderstorms
-        8) echo "" ;;                # Snowy
+        8) echo "" ;;               # Snowy
         10) echo "󰖑" ;;              # Fog
         11) echo "󰖝" ;;              # Windy
         12) echo "" ;;              # Light Showers
         13) echo "󰙿" ;;              # Snowy Showers
         14) echo "" ;;              # Sleet
-        15) echo "" ;;             # Freezing Rain
+        15) echo "" ;;              # Freezing Rain
         16) echo "󰙿" ;;              # Snowy Showers
         17) echo "󰖒" ;;              # Hail
         18) echo "" ;;              # Dust
@@ -71,7 +75,7 @@ get_weather_icon() {
         28) echo "󰼱" ;;              # Partly Cloudy Night
         29) echo "" ;;              # Mostly Clear Night
         30) echo "" ;;              # Mostly Clear Night
-        31) echo "" ;;               # Scattered Clouds
+        31) echo "" ;;              # Scattered Clouds
         *) echo "" ;;               # Unknown
     esac
 }
@@ -92,7 +96,7 @@ fetch_weather_info() {
     fi
 
     # Extract weather information with debug output
-    echo "$weather_data" > /tmp/weather-debug-before-jq.log
+    echo "$weather_data" > "$DEBUG_LOG"
 
     # Modified jq command with error checking
     local icon_code

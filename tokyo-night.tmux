@@ -47,11 +47,10 @@ zoom_number="#($SCRIPTS_PATH/custom-number.sh #P $zoom_id_style)"
 date_and_time="#($SCRIPTS_PATH/datetime-widget.sh)"
 current_path="#($SCRIPTS_PATH/path-widget.sh #{pane_current_path})"
 battery_status="#($SCRIPTS_PATH/battery-widget.sh)"
-weather_status="#(curl -s wttr.in/Hammarsdale?format="%%c%%t")"
+weather_status="#(curl -s wttr.in/Hammarsdale?format="%%t")"
 
 #+--- Bars LEFT ---+
 # Session name
-#tmux set -g status-left "#[fg=${THEME[lavender]},bg=default, nobold]#[fg=${THEME[surface2]},bg=${THEME[lavender]},bold]#{?client_prefix,󱚨 ,#[dim]󰿇 } #[bold,dim]$weather_status#[fg=${THEME[lavender]},bg=default,nobold]"
 tmux set -g status-left "#[fg=${THEME[lavender]},bg=default,nobold]\
 #[fg=${THEME[surface2]},bg=${THEME[lavender]},bold]#{?client_prefix,#[fg=${THEME[yellow]}]󱚨,#[dim]󰿇} \
 #[fg=${THEME[surface2]},bg=${THEME[lavender]},bold] $weather_status \
@@ -59,10 +58,15 @@ tmux set -g status-left "#[fg=${THEME[lavender]},bg=default,nobold]\
 
 #+--- Windows ---+
 # Focus
-tmux set -g window-status-current-format "$RESET#[fg=${THEME[blue]},bg="default",dim] #{?#{==:#{pane_current_command},ssh},#[fg=${THEME[green]}]󰣀 , }#[fg=${THEME[blue]},bold,nodim]$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[green]},bold]#{?window_last_flag, , }"
+tmux set -g window-status-current-format "$RESET#[fg=${THEME[blue]},bg="default",dim] \
+#{?#{==:#{pane_current_command},ssh},#[fg=${THEME[green]}]󰣀 , }\
+#[fg=${THEME[blue]},bold,nodim]$window_number#W#[nobold]\
+#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[green]},bold]#{?window_last_flag, , }"
 
 # Unfocused (transparent)
-tmux set -g window-status-format "#[fg=${THEME[text]}] #{?#{==:#{pane_current_command},ssh},󰣀 , }$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[yellow]}]#{?window_last_flag,󰋚 , }"
+tmux set -g window-status-format "#[fg=${THEME[text]}] \
+#{?#{==:#{pane_current_command},ssh},󰣀 , }$window_number#W#[nobold]\
+#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[yellow]}]#{?window_last_flag,󰋚 , }"
 
 #+--- Bars RIGHT ---+
 tmux set -g status-right "$battery_status$current_path$cmus_status$netspeed$git_status$wb_git_status$date_and_time"

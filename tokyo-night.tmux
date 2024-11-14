@@ -16,7 +16,7 @@ tmux set -g status-right-length 150
 RESET="#[fg=${THEME[text]},bg=${THEME[base]},nobold,noitalics,nounderscore,nodim]"
 
 # Highlight colors
-tmux set -g mode-style "fg=${THEME[lavender]},bg=${THEME[surface0]}"      # modified (with
+tmux set -g mode-style "fg=${THEME[blue]},bg=${THEME[surface0]}"      # modified (with
 tmux set -g message-style "fg=${THEME[red]},bg=default"                   # transparent background
 tmux set -g message-command-style "fg=${THEME[green]},bg=default"         # and green text).
 tmux set -g pane-border-style "fg=${THEME[surface0]}"
@@ -51,10 +51,10 @@ weather_status="#(curl -s wttr.in/Hammarsdale?format="%%t")"
 
 #+--- Bars LEFT ---+
 # Session name
-tmux set -g status-left "#[fg=${THEME[lavender]},bg=default,nobold]\
-#[fg=${THEME[surface2]},bg=${THEME[lavender]},bold]#{?client_prefix,#[fg=${THEME[red]}]󱚨,#[dim]󰿇} \
-#[fg=${THEME[surface2]},bg=${THEME[lavender]},bold] #[bold]$weather_status \
-#[fg=${THEME[lavender]},bg=default,nobold]"
+tmux set -g status-left "#[fg=${THEME[blue]},bg=default,nobold]\
+#[fg=${THEME[surface2]},bg=${THEME[blue]},bold]#{?client_prefix,#[fg=${THEME[red]}]󱚨,#[dim]󰿇} \
+#[fg=${THEME[surface2]},bg=${THEME[blue]},bold] #[bold]$weather_status \
+#[fg=${THEME[blue]},bg=default,nobold]"
 
 #+--- Windows ---+
 # Focus

@@ -9,7 +9,6 @@
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SCRIPTS_PATH="$CURRENT_DIR/src"
 source $SCRIPTS_PATH/themes.sh
-
 tmux set -g status-left-length 80
 tmux set -g status-right-length 150
 
@@ -52,7 +51,7 @@ weather_status="#($SCRIPTS_PATH/weather-widget.sh)"
 
 #+--- Bars LEFT ---+
 # Session name
-tmux set -g status-left "#[fg=${THEME[lavender]},bg=default, nobold]#[fg=${THEME[surface2]},bg=${THEME[lavender]},bold] #{?client_prefix,󱠇 ,#[dim]󰤂 }#[bold,nodim]$weather_status #[fg=${THEME[lavender]},bg=default,nobold]"
+tmux set -g status-left "#[fg=${THEME[lavender]},bg=default, nobold]#[fg=${THEME[surface2]},bg=${THEME[lavender]},bold] #{?client_prefix, ,#[dim]󰤂 }#[bold,nodim]$weather_status #[fg=${THEME[lavender]},bg=default,nobold]"
 
 #+--- Windows ---+
 # Focus

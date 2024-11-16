@@ -10,7 +10,7 @@ source "$CURRENT_DIR/../lib/coreutils-compat.sh"
 source "$CURRENT_DIR/themes.sh"
 
 cd "$1" || exit 1
-RESET="#[fg=${THEME[overlay3]},nobold,noitalics,nounderscore,nodim]"
+RESET="#[fg=${THEME[overlay2]},nobold,noitalics,nounderscore,nodim]"
 BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
 STATUS=$(git status --porcelain 2>/dev/null | grep -cE "^(M| M)")
 

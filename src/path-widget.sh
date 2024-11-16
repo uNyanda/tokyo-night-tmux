@@ -23,4 +23,4 @@ if [[ ${PATH_FORMAT} == "relative" ]]; then
   current_path="$(echo ${current_path} | sed 's#'"$HOME"'#~#g')"
 fi
 
-echo "#[fg=#74c7ec,bg=default]░  ${RESET}#[bg=default]${current_path} "
+echo "#[fg=#74c7ec,bg=default]░  ${RESET}#[bg=default]${current_path} "

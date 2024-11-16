@@ -52,7 +52,7 @@ weather_status="#(curl -s wttr.in/Hammarsdale?format="%%t+%%C")"
 #+--- Bars LEFT ---+
 # Session name
 tmux set -g status-left "#[fg=${THEME[mauve]},bg=default,nobold]\
-#[fg=${THEME[surface2]},bg=${THEME[mauve]},bold]#{?client_prefix,#[fg=${THEME[red]}]󱚨,#[nodim]󰿇} \
+#[fg=${THEME[surface2]},bg=${THEME[mauve]},bold]#{?client_prefix,#[fg=${THEME[red]}],#[nodim]} \
 #[fg=${THEME[surface2]},bg=${THEME[mauve]},bold] \
 #[bold]#{?client_prefix,#[fg=${THEME[red]}],#[fg=${THEME[surface2]}]}$weather_status\
 #[fg=${THEME[mauve]},bg=default,nobold]"
@@ -60,7 +60,7 @@ tmux set -g status-left "#[fg=${THEME[mauve]},bg=default,nobold]\
 #+--- Windows ---+
 # Focus
 tmux set -g window-status-current-format "$RESET#[fg=${THEME[blue]},bg="default",dim] \
-#{?#{==:#{pane_current_command},ssh},#[fg=${THEME[green]}]󰣀 , }\
+#{?#{==:#{pane_current_command},ssh},#[fg=${THEME[green]}]󰣀 , }\
 #[fg=${THEME[blue]},bold,nodim]$window_number#W#[nobold]\
 #{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[green]},bold]#{?window_last_flag, , }"
 

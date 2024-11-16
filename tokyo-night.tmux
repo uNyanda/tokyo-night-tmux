@@ -47,14 +47,14 @@ zoom_number="#($SCRIPTS_PATH/custom-number.sh #P $zoom_id_style)"
 date_and_time="#($SCRIPTS_PATH/datetime-widget.sh)"
 current_path="#($SCRIPTS_PATH/path-widget.sh #{pane_current_path})"
 battery_status="#($SCRIPTS_PATH/battery-widget.sh)"
-weather_status="#(curl -s wttr.in/Hammarsdale?format="%%t+%%C")"
+weather_status="#(curl -s wttr.in/Durban?format="%%t+%%C")"
 
 #+--- Bars LEFT ---+
 # Session name
 tmux set -g status-left "#[fg=${THEME[mauve]},bg=default,nobold]\
 #[fg=${THEME[surface2]},bg=${THEME[mauve]},bold]#{?client_prefix,#[fg=${THEME[red]}],#[nodim]} \
 #[fg=${THEME[surface2]},bg=${THEME[mauve]},bold] \
-#[bold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[surface2]}]}$weather_status\
+#[nobold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[surface2]}]}$weather_status\
 #[fg=${THEME[mauve]},bg=default,nobold]"
 
 #+--- Windows ---+

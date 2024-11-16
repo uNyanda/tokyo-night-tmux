@@ -11,12 +11,11 @@ format_fsquare="󰎡󰎤󰎧󰎪󰎭󰎱󰎳󰎶󰎹󰎼"
 format_hsquare="󰎣󰎦󰎩󰎬󰎮󰎰󰎵󰎸󰎻󰎾"
 format_dsquare="󰎢󰎥󰎨󰎫󰎲󰎯󰎴󰎷󰎺󰎽"
 format_esquare="󰼎󰼏󰼐󰼑󰼒󰼓󰼔󰼕󰼖󰼗"
-format_roman=" 󱂈󱂉󱂊󱂋󱂌󱂍󱂎󱂏󱂐"
 format_super="⁰¹²³⁴⁵⁶⁷⁸⁹"
 format_sub="₀₁₂₃₄₅₆₇₈₉"
 format_hcircle="󰰗󰲡󰲣󰲥󰲧󰲩󰲫󰲭󰲯󰲱"
 format_fcircle="󰰖󰲠󰲢󰲤󰲦󰲨󰲪󰲬󰲮󰲰"
-format_numeric="󰬺󰬻󰬼󰬽󰬾󰬿󰭀󰭁󰭂"
+format_numeric="󰬺󰬻󰬼󰬽󰬾󰬿󰭀󰭁󰭂"
 
 ID=$1
 FORMAT=${2:-none}

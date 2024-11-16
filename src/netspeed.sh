@@ -47,8 +47,8 @@ read -r RX2 TX2 < <(get_bytes "$INTERFACE")
 RX_DIFF=$((RX2 - RX1))
 TX_DIFF=$((TX2 - TX1))
 
-RX_SPEED="#[fg=${THEME[foreground]}]$(readable_format "$RX_DIFF" "$TIME_DIFF")"
-TX_SPEED="#[fg=${THEME[foreground]}]$(readable_format "$TX_DIFF" "$TIME_DIFF")"
+RX_SPEED="#[fg=${THEME[foreground]}, bg=default]$(readable_format "$RX_DIFF" "$TIME_DIFF")"
+TX_SPEED="#[fg=${THEME[foreground]}, bg=default]$(readable_format "$TX_DIFF" "$TIME_DIFF")"
 
 # Interface icon
 if [[ ${INTERFACE} == "en0" ]] || [[ -d /sys/class/net/${INTERFACE}/wireless ]]; then

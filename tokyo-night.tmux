@@ -47,7 +47,7 @@ zoom_number="#($SCRIPTS_PATH/custom-number.sh #P $zoom_id_style)"
 date_and_time="#($SCRIPTS_PATH/datetime-widget.sh)"
 current_path="#($SCRIPTS_PATH/path-widget.sh #{pane_current_path})"
 battery_status="#($SCRIPTS_PATH/battery-widget.sh)"
-weather_status="#(curl -s wttr.in/Hammarsdale?format="%%c")"
+weather_status="#(curl -s wttr.in/Hammarsdale?format="%%c%%C")"
 
 #+--- Bars LEFT ---+
 # Session name

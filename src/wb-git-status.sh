@@ -32,7 +32,7 @@ if [[ $PROVIDER == "github.com" ]]; then
   if ! command -v gh &>/dev/null; then
     exit 1
   fi
-  PROVIDER_ICON="$RESET#[fg=${THEME[lavender]},bg="default"] "
+  PROVIDER_ICON="$RESET#[fg=${THEME[lavender]},bg="default"] "
   PR_COUNT=$(gh pr list --json number --jq 'length' | bc)
   REVIEW_COUNT=$(gh pr status --json reviewRequests --jq '.needsReview | length' | bc)
   RES=$(gh issue list --json "assignees,labels" --assignee @me)
@@ -43,7 +43,7 @@ elif [[ $PROVIDER == "gitlab.com" ]]; then
   if ! command -v glab &>/dev/null; then
     exit 1
   fi
-  PROVIDER_ICON="$RESET#[fg=#fc6d26] "
+  PROVIDER_ICON="$RESET#[fg=#fc6d26]󰮠 "
   PR_COUNT=$(glab mr list | grep -cE "^\!")
   REVIEW_COUNT=$(glab mr list --reviewer=@me | grep -cE "^\!")
   ISSUE_COUNT=$(glab issue list | grep -cE "^\#")
@@ -60,11 +60,11 @@ if [[ $REVIEW_COUNT -gt 0 ]]; then
 fi
 
 if [[ $ISSUE_COUNT -gt 0 ]]; then
-  ISSUE_STATUS="#[fg=${THEME[git_green]},bold] ${RESET}${ISSUE_COUNT} "
+  ISSUE_STATUS="#[fg=${THEME[git_green]},bold]󰲼 ${RESET}${ISSUE_COUNT} "
 fi
 
 if [[ $BUG_COUNT -gt 0 ]]; then
-  BUG_STATUS="#[fg=${THEME[git_red]},bold] ${RESET}${BUG_COUNT} "
+  BUG_STATUS="#[fg=${THEME[git_red]},bold] ${RESET}${BUG_COUNT} "
 fi
 
 WB_STATUS="#[fg=${THEME[surface2]},bold] $RESET$PROVIDER_ICON $RESET$PR_STATUS$REVIEW_STATUS$ISSUE_STATUS$BUG_STATUS"

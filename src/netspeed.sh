@@ -23,13 +23,13 @@ TIME_DIFF=${TIME_DIFF:-1}
 
 # Icons
 declare -A NET_ICONS
-NET_ICONS[wifi_up]="#[fg=${THEME[foreground]}]\U000f05a9"  # nf-md-wifi
+NET_ICONS[wifi_up]="#[fg=${THEME[surface1]}]\U000f05a9"  # nf-md-wifi
 NET_ICONS[wifi_down]="#[fg=${THEME[red]}]\U000f05aa"       # nf-md-wifi_off
-NET_ICONS[wired_up]="#[fg=${THEME[foreground]}]\U000f0318" # nf-md-lan_connect
+NET_ICONS[wired_up]="#[fg=${THEME[surface1]}]\U000f0318" # nf-md-lan_connect
 NET_ICONS[wired_down]="#[fg=${THEME[red]}]\U000f0319"      # nf-md-lan_disconnect
-NET_ICONS[traffic_tx]="#[fg=${THEME[bblue]}]\U000f06f6"    # nf-md-upload_network
-NET_ICONS[traffic_rx]="#[fg=${THEME[bgreen]}]\U000f06f4"   # nf-md-download_network
-NET_ICONS[ip]="#[fg=${THEME[foreground]}]\U000f0a5f"       # nf-md-ip
+NET_ICONS[traffic_tx]="#[fg=${THEME[blue]}]\U000f06f6"    # nf-md-upload_network
+NET_ICONS[traffic_rx]="#[fg=${THEME[green]}]\U000f06f4"   # nf-md-download_network
+NET_ICONS[ip]="#[fg=${THEME[surface1]}]\U000f0a5f"       # nf-md-ip
 
 # Determine interface if not set
 if [[ -z $INTERFACE ]]; then
@@ -47,8 +47,8 @@ read -r RX2 TX2 < <(get_bytes "$INTERFACE")
 RX_DIFF=$((RX2 - RX1))
 TX_DIFF=$((TX2 - TX1))
 
-RX_SPEED="#[fg=${THEME[foreground]}, bg=default]$(readable_format "$RX_DIFF" "$TIME_DIFF")"
-TX_SPEED="#[fg=${THEME[foreground]}, bg=default]$(readable_format "$TX_DIFF" "$TIME_DIFF")"
+RX_SPEED="#[fg=${THEME[surface1]}, bg=default]$(readable_format "$RX_DIFF" "$TIME_DIFF")"
+TX_SPEED="#[fg=${THEME[surface1]}, bg=default]$(readable_format "$TX_DIFF" "$TIME_DIFF")"
 
 # Interface icon
 if [[ ${INTERFACE} == "en0" ]] || [[ -d /sys/class/net/${INTERFACE}/wireless ]]; then

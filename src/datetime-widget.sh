@@ -53,4 +53,4 @@ if [[ $date_string && $time_string ]]; then
   separator="❬ "
 fi
 
-echo "$RESET#[fg=${THEME[foreground]},bg=${THEME[bblack]}]$date_string $separator$time_string"
+echo "$RESET#[fg=${THEME[text]},bg=default]$date_string $separator$time_string"

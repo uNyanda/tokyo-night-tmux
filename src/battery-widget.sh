@@ -16,9 +16,9 @@ BATTERY_LOW=$(tmux show-option -gv @tokyo-night-tmux_battery_low_threshold 2>/de
 RESET="#[fg=brightwhite,bg=#15161e,nobold,noitalics,nounderscore,nodim]"
 
 DISCHARGING_ICONS=("󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹")
-CHARGING_ICONS=("󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅")
+CHARGING_ICONS=("󰢜 " "󰂆 " "󰂇 " "󰂈 " "󰢝 " "󰂉 " "󰢞 " "󰂊 " "󰂋 " "󰂅 ")
 NOT_CHARGING_ICON="󰚥"
-NO_BATTERY_ICON="󱉝"
+NO_BATTERY_ICON="󱉝 "
 DEFAULT_BATTERY_LOW=21
 
 if [[ "$(uname)" == "Darwin" ]]; then

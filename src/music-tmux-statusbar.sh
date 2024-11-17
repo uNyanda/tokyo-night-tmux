@@ -14,11 +14,11 @@ fi
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source $CURRENT_DIR/themes.sh
 
-ACCENT_COLOR="${THEME[blue]}"
-SECONDARY_COLOR="${THEME[surface1]}"
-BG_COLOR="${THEME[surface1]}"
-BG_BAR="${THEME[surface1]}"
-TIME_COLOR="${THEME[crust]}"
+ACCENT_COLOR="#[fg=${THEME[blue]},bg=default]"
+SECONDARY_COLOR="#[fg=${THEME[surface2]},bg=default]"
+BG_COLOR="#[fg=${THEME[surface2]},bg=default]"
+BG_BAR="#[fg=${THEME[surface1]},bg=default]"
+TIME_COLOR="#[fg=${THEME[crust]},bg=default]"
 
 if [[ $1 =~ ^[[:digit:]]+$ ]]; then
   MAX_TITLE_WIDTH=$1

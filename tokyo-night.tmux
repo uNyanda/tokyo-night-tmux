@@ -54,7 +54,7 @@ weather_status="#(curl -s wttr.in/Durban?format="%%t+%%C")"
 tmux set -g status-left "#[fg=${THEME[mauve]},bg=default,nobold]\
 #[fg=${THEME[surface2]},bg=${THEME[mauve]},bold]#{?client_prefix,#[fg=${THEME[red]}],#[nodim]} \
 #[fg=${THEME[surface2]},bg=${THEME[mauve]},bold] \
-#[nobold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[surface2]}]}$weather_status\
+#[nobold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[overlay1]}]}$weather_status\
 #[fg=${THEME[mauve]},bg=default,nobold]"
 
 #+--- Windows ---+

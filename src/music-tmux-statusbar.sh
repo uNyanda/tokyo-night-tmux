@@ -83,9 +83,9 @@ else
 fi
 if [ -n "$TITLE" ]; then
   if [ "$STATUS" = "playing" ]; then
-    PLAY_STATE="░ $OUTPUT"
+    PLAY_STATE="#[fg=${THEME[yellow]},bg=default]░ $OUTPUT"
   else
-    PLAY_STATE="░ 󰏤$OUTPUT"
+    PLAY_STATE="#[fg=${THEME[teal]},bg=default]░ 󰏤$OUTPUT"
   fi
   OUTPUT="$PLAY_STATE $TITLE"
 

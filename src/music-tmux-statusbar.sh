@@ -105,7 +105,7 @@ if [ "${#OUTPUT}" -ge $MAX_TITLE_WIDTH ]; then
 fi
 
 if [ -z "$OUTPUT" ]; then
-  echo "$OUTPUT #[fg=green,bg=default]"
+  echo "$OUTPUT #[fg=green]"
 else
   OUT="$OUTPUT $TIME "
   ONLY_OUT="$OUTPUT "

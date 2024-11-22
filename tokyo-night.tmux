@@ -70,13 +70,6 @@ tmux set -g window-status-format "#[fg=${THEME[text]}] \
 #{?#{==:#{pane_current_command},ssh},󰣀 , }$window_number#W#[nobold]\
 #{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[yellow]}]#{?window_last_flag,󰋚 , }"
 
-# lets see if pomodoro will work:
-# Pomodoro styling - add these before where you use the $pomodoro variable
-set -g @pomodoro_on "#[fg=${THEME[mauve]},bg=default,nobold]#[fg=${THEME[surface2]},bg=${THEME[mauve]},bold] #{pomodoro_time} #[fg=${THEME[mauve]},bg=default,nobold]"
-set -g @pomodoro_complete "#[fg=${THEME[mauve]},bg=default,nobold]#[fg=${THEME[surface2]},bg=${THEME[mauve]},bold] #{pomodoro_time} #[fg=${THEME[mauve]},bg=default,nobold]"
-set -g @pomodoro_pause "#[fg=${THEME[mauve]},bg=default,nobold]#[fg=${THEME[surface2]},bg=${THEME[mauve]},bold] #{pomodoro_time} #[fg=${THEME[mauve]},bg=default,nobold]"
-
-
 #+--- Bars RIGHT ---+
 tmux set -g status-right "$pomodoro$battery_status$current_path$cmus_status$netspeed$git_status$wb_git_status$date_and_time"
 tmux set -g window-status-separator ""

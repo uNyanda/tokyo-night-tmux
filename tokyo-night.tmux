@@ -55,7 +55,7 @@ pomodoro="#{pomodoro_status}"
 tmux set -g status-left "#[fg=${THEME[mauve]},bg=default,nobold]\
 #[fg=${THEME[surface2]},bg=${THEME[mauve]},bold]#{?client_prefix,#[fg=${THEME[red]}],#[nodim]} \
 #[fg=${THEME[surface2]},bg=${THEME[mauve]},bold] \
-#[nobold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[overlay1]}]}$weather_status$pomodoro\
+#[nobold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[overlay1]}]}$weather_status\
 #[fg=${THEME[mauve]},bg=default,nobold]"
 
 #+--- Windows ---+
@@ -71,5 +71,19 @@ tmux set -g window-status-format "#[fg=${THEME[text]}] \
 #{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[yellow]}]#{?window_last_flag,󰋚 , }"
 
 #+--- Bars RIGHT ---+
+# Pomodoro styling with powerline separators
+tmux set -g @theme-pomodoro-format "\
+#[fg=${THEME[mauve]},bg=default,nobold]\
+#[fg=${THEME[surface2]},bg=${THEME[mauve]},bold]#{?#{==:#{pomodoro_status},running},#[fg=${THEME[orange]}],}\
+#{?#{==:#{pomodoro_status},break},#[fg=${THEME[green]}],}\
+#{?#{==:#{pomodoro_status},paused},#[fg=${THEME[yellow]}],} \
+#{?#{==:#{pomodoro_status},running}, #{pomodoro_time},}\
+#{?#{==:#{pomodoro_status},break}, #{pomodoro_time},}\
+#{?#{==:#{pomodoro_status},paused}, #{pomodoro_time},}\
+#[fg=${THEME[mauve]},bg=default,nobold]"
+
+# Add to your status line where desired
+tmux set -g status-right "#{@theme-pomodoro-format}#{@theme-status-right}"
+
 tmux set -g status-right "$battery_status$current_path$cmus_status$netspeed$git_status$wb_git_status$date_and_time"
 tmux set -g window-status-separator ""

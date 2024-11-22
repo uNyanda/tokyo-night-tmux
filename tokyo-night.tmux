@@ -74,16 +74,13 @@ tmux set -g window-status-format "#[fg=${THEME[text]}] \
 # Pomodoro styling with powerline separators
 tmux set -g @theme-pomodoro-format "\
 #[fg=${THEME[mauve]},bg=default,nobold]\
-#[fg=${THEME[surface2]},bg=${THEME[mauve]},bold]#{?#{==:#{pomodoro_status},running},#[fg=${THEME[orange]}],}\
-#{?#{==:#{pomodoro_status},break},#[fg=${THEME[green]}],}\
-#{?#{==:#{pomodoro_status},paused},#[fg=${THEME[yellow]}],} \
-#{?#{==:#{pomodoro_status},running}, #{pomodoro_time},}\
-#{?#{==:#{pomodoro_status},break}, #{pomodoro_time},}\
-#{?#{==:#{pomodoro_status},paused}, #{pomodoro_time},}\
+#[fg=${THEME[surface2]},bg=${THEME[mauve]},bold]#{?#{==:#$pomodoro,running},#[fg=${THEME[orange]}],}\
+#{?#{==:#$pomodoro,break},#[fg=${THEME[green]}],}\
+#{?#{==:#$pomodoro,paused},#[fg=${THEME[yellow]}],} \
+#{?#{==:#$pomodoro,running}, #{pomodoro_time},}\
+#{?#{==:#$pomodoro,break}, #{pomodoro_time},}\
+#{?#{==:#$pomodoro,paused}, #{pomodoro_time},}\
 #[fg=${THEME[mauve]},bg=default,nobold]"
 
-# Add to your status line where desired
-tmux set -g status-right "#{@theme-pomodoro-format}#{@theme-status-right}"
-
-tmux set -g status-right "$battery_status$current_path$cmus_status$netspeed$git_status$wb_git_status$date_and_time"
+tmux set -g status-right "$pomodoro$battery_status$current_path$cmus_status$netspeed$git_status$wb_git_status$date_and_time"
 tmux set -g window-status-separator ""

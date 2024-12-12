@@ -16,9 +16,9 @@ tmux set -g status-right-length 150
 RESET="#[fg=${THEME[text]},bg=${THEME[base]},nobold,noitalics,nounderscore,nodim]"
 
 # Highlight colors
-tmux set -g mode-style "fg=${THEME[red]},bg=default"                      # transparent background
-tmux set -g message-style "fg=${THEME[red]},bg=default"                   # transparent background
-tmux set -g message-command-style "fg=${THEME[green]},bg=default"         # transparent background
+tmux set -g mode-style "fg=${THEME[red]},bg=default"              # transparent background
+tmux set -g message-style "fg=${THEME[red]},bg=default"           # transparent background
+tmux set -g message-command-style "fg=${THEME[green]},bg=default" # transparent background
 tmux set -g pane-border-style "fg=${THEME[surface0]}"
 tmux set -g pane-active-border-style "fg=${THEME[blue]}"
 tmux set -g pane-border-status off
@@ -47,7 +47,7 @@ zoom_number="#($SCRIPTS_PATH/custom-number.sh #P $zoom_id_style)"
 date_and_time="#($SCRIPTS_PATH/datetime-widget.sh)"
 current_path="#($SCRIPTS_PATH/path-widget.sh #{pane_current_path})"
 battery_status="#($SCRIPTS_PATH/battery-widget.sh)"
-weather_status="#(curl -s wttr.in/Hammarsdale?format="%%C")"
+weather_status="$(curl -s --max-time 2 wttr.in/Hammarsdale?format="%%C" || echo "󱓤")"
 pomodoro="#{pomodoro_status}"
 
 #+--- Bars LEFT ---+
@@ -55,8 +55,7 @@ pomodoro="#{pomodoro_status}"
 tmux set -g status-left "#[fg=${THEME[mauve]},bg=default,nobold]\
 #[fg=${THEME[surface2]},bg=${THEME[mauve]},bold]#{?client_prefix,#[fg=${THEME[red]}],#[nodim]} \
 #[fg=${THEME[surface2]},bg=${THEME[mauve]},bold] \
-#[nobold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[overlay1]}]}$weather_status\
-#[fg=${THEME[mauve]},bg=default,nobold]"
+#[nobold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[overlay1]}]}$weather_status#[fg=${THEME[mauve]},bg=default,nobold]"
 
 #+--- Windows ---+
 # Focus

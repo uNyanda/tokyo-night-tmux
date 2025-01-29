@@ -53,7 +53,7 @@ pomodoro="#{pomodoro_status}"
 #+--- Bars LEFT ---+
 # Session name
 tmux set -g status-left "#[fg=${THEME[mauve]},bg=default,nobold]\
-#[fg=${THEME[surface2]},bg=${THEME[mauve]},bold]#{?client_prefix,#[fg=${THEME[red]}],#[nodim]} \
+#[fg=${THEME[surface2]},bg=${THEME[mauve]},bold]#{?client_prefix,#[fg=${THEME[red]}]󰛨,#[nodim]} \
 #[fg=${THEME[surface2]},bg=${THEME[mauve]},bold]\
 #[nobold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[overlay1]}]}#[bold]#S#[fg=${THEME[mauve]},bg=default,nobold]"
 

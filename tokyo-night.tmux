@@ -65,7 +65,7 @@ tmux set -g window-status-current-format "$RESET#[fg=${THEME[blue]},bg="default"
 #{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[green]},bold]#{?window_last_flag, , }"
 
 # Unfocused (transparent)
-tmux set -g window-status-format "#[fg=${THEME[text]}] \
+tmux set -g window-status-format "#[fg="#303446"] \
 #{?#{==:#{pane_current_command},ssh},󰣀 , }$window_number#W#[nobold]\
 #{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[yellow]}]#{?window_last_flag,󰋚 , }"
 

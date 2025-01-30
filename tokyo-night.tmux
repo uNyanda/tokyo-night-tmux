@@ -55,7 +55,7 @@ pomodoro="#{pomodoro_status}"
 tmux set -g status-left "#[fg=${THEME[green]},bg=default,nobold]\
 #[fg=${THEME[surface2]},bg=${THEME[green]},bold]#{?client_prefix,#[fg=${THEME[yellow]}]󰌵,#[nodim]} \
 #[fg=${THEME[surface2]},bg=${THEME[green]},bold]\
-#[nobold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[overlay1]}]}#[bold]#S#[fg=${THEME[green]},bg=default,nobold]"
+#[nobold]#{?client_prefix,#[fg=${THEME[lavender]}],#[fg=${THEME[overlay1]}]}#[bold]#S#[fg=${THEME[green]},bg=default,nobold]"
 
 #+--- Windows ---+
 # Focus

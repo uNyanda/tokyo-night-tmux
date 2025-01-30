@@ -52,10 +52,10 @@ pomodoro="#{pomodoro_status}"
 
 #+--- Bars LEFT ---+
 # Session name
-tmux set -g status-left "#[fg=${THEME[rosewater]},bg=default,nobold]\
-#[fg=${THEME[surface2]},bg=${THEME[rosewater]},bold]#{?client_prefix,#[fg=${THEME[red]}]󰌵,#[nodim]} \
-#[fg=${THEME[surface2]},bg=${THEME[rosewater]},bold]\
-#[nobold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[overlay1]}]}#[bold]#S#[fg=${THEME[rosewater]},bg=default,nobold]"
+tmux set -g status-left "#[fg=${THEME[green]},bg=default,nobold]\
+#[fg=${THEME[surface2]},bg=${THEME[green]},bold]#{?client_prefix,#[fg=${THEME[yellow]}]󰌵,#[nodim]} \
+#[fg=${THEME[surface2]},bg=${THEME[green]},bold]\
+#[nobold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[overlay1]}]}#[bold]#S#[fg=${THEME[green]},bg=default,nobold]"
 
 #+--- Windows ---+
 # Focus

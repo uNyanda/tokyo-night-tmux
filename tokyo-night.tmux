@@ -52,10 +52,10 @@ pomodoro="#{pomodoro_status}"
 
 #+--- Bars LEFT ---+
 # Session name
-tmux set -g status-left "#[fg=#{?client_prefix,${THEME[yellow]},${THEME[green]}},bg=default,nobold]\
-#[fg=${THEME[surface2]},bg=#{?client_prefix,${THEME[yellow]},${THEME[green]}},nobold]#{?client_prefix,#[fg=${THEME[green]}]󰌵,} \
-#[fg=${THEME[yellow]},bg=#{?client_prefix,${THEME[yellow]},${THEME[green]}},nobold]\
-#[nobold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[lavender]}]}#[italics]#S#[fg=#{?client_prefix,${THEME[yellow]},${THEME[green]}},bg=default,nobold]"
+tmux set -g status-left "#[fg=#{?client_prefix,${THEME[sky]},${THEME[green]}},bg=default,nobold]\
+#[fg=${THEME[surface2]},bg=#{?client_prefix,${THEME[sky]},${THEME[green]}},nobold]#{?client_prefix,#[fg=${THEME[green]}]󰌵,} \
+#[fg=${THEME[surface2]},bg=#{?client_prefix,${THEME[sky]},${THEME[green]}},nobold]\
+#[nobold]#{?client_prefix,#[fg=${THEME[green]}],#[fg=${THEME[lavender]}]}#[italics]#S#[fg=#{?client_prefix,${THEME[sky]},${THEME[green]}},bg=default,nobold]"
 
 #+--- Windows ---+
 # Focus

@@ -53,15 +53,15 @@ pomodoro="#{pomodoro_status}"
 #+--- Bars LEFT ---+
 # Session name
 tmux set -g status-left "#[fg=#{?client_prefix,${THEME[lavender]},${THEME[mantle]}},bg=default,nobold]\
-#[fg=${THEME[surface2]},bg=#{?client_prefix,${THEME[lavender]},${THEME[mantle]}},nobold]#{?client_prefix,#[fg=${THEME[red]}]󰌵,} \
+#[fg=${THEME[surface2]},bg=#{?client_prefix,${THEME[lavender]},${THEME[mantle]}},nobold]#{?client_prefix,#[fg=${THEME[crust]}]󰌵,} \
 #[fg=${THEME[surface2]},bg=#{?client_prefix,${THEME[lavender]},${THEME[mantle]}},nobold]\
-#[nobold]#{?client_prefix,#[fg=${THEME[red]}],#[fg=${THEME[surface2]}]}#[italics]#S#[fg=#{?client_prefix,${THEME[lavender]},${THEME[mantle]}},bg=default,nobold]"
+#[nobold]#{?client_prefix,#[fg=${THEME[crust]}],#[fg=${THEME[surface2]}]}#[italics]#S#[fg=#{?client_prefix,${THEME[lavender]},${THEME[mantle]}},bg=default,nobold]"
 
 #+--- Windows ---+
 # Focus
 tmux set -g window-status-current-format "$RESET#[fg=${THEME[blue]},bg=default,dim] \
 #{?#{==:#{pane_current_command},ssh},#[fg=${THEME[green]}]󰣀 , }\
-#[fg=${THEME[blue]},bg=default,bold,italics,nodim]$window_number#W#[nobold]\
+#[fg=${THEME[blue]},bold,italics,nodim]$window_number#W#[nobold]\
 #{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[green]},bold]#{?window_last_flag, , }"
 
 # Unfocused (transparent)

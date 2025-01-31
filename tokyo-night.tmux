@@ -65,7 +65,7 @@ pomodoro="#{pomodoro_status}"
 # #[fg=#{?client_prefix,${THEME[yellow]},${THEME[green]}},bg=default,nobold]"
 
 tmux set -g status-left "#[fg=#{?client_prefix,${THEME[yellow]},${THEME[green]}},bg=default,nobold]\
-#[fg=${THEME[surface2]},bg=${THEME[green]},bold]#{?client_prefix,#[fg=${THEME[red]}]󰌵,} \
+#[fg=${THEME[surface2]},bg=${THEME[green]},bold]#{?client_prefix,#[fg=${THEME[red]},${THEME[green]}}]󰌵,} \
 #[fg=${THEME[surface2]},bg=#{?client_prefix,${THEME[yellow]},${THEME[green]}},bold]\
 #[nobold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[lavender]}]}#[bold]#S#[fg=#{?client_prefix,${THEME[yellow]},${THEME[green]}},bg=default,nobold]"
 

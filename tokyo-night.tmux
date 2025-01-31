@@ -51,11 +51,17 @@ weather_status=$(curl -s --max-time 5 "wttr.in/Hammarsdale?format=%C" || echo "�
 pomodoro="#{pomodoro_status}"
 
 #+--- Bars LEFT ---+
-# Session name
+# Session name  TODO: figure out how to make the entire session name change colour when prefix is pressed.
+# tmux set -g status-left "#[fg=${THEME[green]},bg=default,nobold]\
+# #[fg=${THEME[surface2]},bg=${THEME[green]},bold]#{?client_prefix,#[fg=${THEME[yellow]}]󰌵,#[nodim]} \
+# #[fg=${THEME[surface2]},bg=${THEME[green]},bold]\
+# #[nobold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[lavender]}]}#[bold]#S#[fg=${THEME[green]},bg=default,nobold]"
+
 tmux set -g status-left "#[fg=${THEME[green]},bg=default,nobold]\
-#[fg=${THEME[surface2]},bg=${THEME[green]},bold]#{?client_prefix,#[fg=${THEME[yellow]}]󰌵,#[nodim]} \
-#[fg=${THEME[surface2]},bg=${THEME[green]},bold]\
-#[nobold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[lavender]}]}#[bold]#S#[fg=${THEME[green]},bg=default,nobold]"
+#[fg=${THEME[surface2]},bg=#{?client_prefix,${THEME[yellow]},${THEME[green]}},bold]#{?client_prefix,󰌵, } \
+#[fg=${THEME[surface2]},bg=#{?client_prefix,${THEME[yellow]},${THEME[green]}},bold]\
+#[nobold]#{?client_prefix,#[fg=${THEME[text]}],#[fg=${THEME[lavender]}]}#[bold]#S\
+#[fg=#{?client_prefix,${THEME[yellow]},${THEME[green]}},bg=default,nobold]"
 
 #+--- Windows ---+
 # Focus

@@ -38,19 +38,19 @@ fi
 UNTRACKED_COUNT="$(git ls-files --other --directory --exclude-standard | wc -l | bc)"
 
 if [[ $CHANGED_COUNT -gt 0 ]]; then
-  STATUS_CHANGED="${RESET}#[fg=${THEME[yellow]},bold] ${CHANGED_COUNT} "
+  STATUS_CHANGED="${RESET}#[fg=${THEME[yellow]},bold] ${CHANGED_COUNT} "
 fi
 
 if [[ $INSERTIONS_COUNT -gt 0 ]]; then
-  STATUS_INSERTIONS="${RESET}#[fg=${THEME[green]},bold] ${INSERTIONS_COUNT} "
+  STATUS_INSERTIONS="${RESET}#[fg=${THEME[green]},bold] ${INSERTIONS_COUNT} "
 fi
 
 if [[ $DELETIONS_COUNT -gt 0 ]]; then
-  STATUS_DELETIONS="${RESET}#[fg=${THEME[red]},bold] ${DELETIONS_COUNT} "
+  STATUS_DELETIONS="${RESET}#[fg=${THEME[red]},bold] ${DELETIONS_COUNT} "
 fi
 
 if [[ $UNTRACKED_COUNT -gt 0 ]]; then
-  STATUS_UNTRACKED="${RESET}#[fg=${THEME[flamingo]},bold] ${UNTRACKED_COUNT} "
+  STATUS_UNTRACKED="${RESET}#[fg=${THEME[flamingo]},bold] ${UNTRACKED_COUNT} "
 fi
 
 # Determine repository sync status

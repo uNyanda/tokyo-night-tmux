@@ -59,10 +59,10 @@ tmux set -g status-left "#[fg=#{?client_prefix,${THEME[rosewater]},${THEME[mauve
 
 #+--- Windows ---+
 # Focus
-tmux set -g window-status-current-format "$RESET#[fg=${THEME[blue]},bg=default,dim] \
-#{?#{==:#{pane_current_command},ssh},#[fg=${THEME[green]}]󰣀 , }\
-#[fg=${THEME[blue]},bold,nodim]$window_number#W#[nobold]\
-#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[green]},bold]#{?window_last_flag, , }"
+tmux set -g window-status-current-format "$RESET#[fg=${THEME[sapphire]},bg=default,dim] \
+#{?#{==:#{pane_current_command},ssh},#[fg=${THEME[sky]}]󰣀 , }\
+#[fg=${THEME[sapphire]},bold,nodim]$window_number#W#[nobold]\
+#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[sky]},bold]#{?window_last_flag, , }"
 
 # Unfocused (transparent)
 tmux set -g window-status-format "#[fg="#303446"] \
